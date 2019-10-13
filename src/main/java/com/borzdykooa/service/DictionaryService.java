@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 import java.util.TreeSet;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
@@ -22,7 +23,7 @@ public class DictionaryService {
     public List<Dictionary> getDictionariesWithJava() {
         List<Dictionary> firstDictionaries = DictionaryDao.getInstance().getAllDictionaries(DaoQuery.GET_FIRST_TABLE_DICTIONARIES);
         List<Dictionary> secondDictionaries = DictionaryDao.getInstance().getAllDictionaries(DaoQuery.GET_SECOND_TABLE_DICTIONARIES);
-        TreeSet<Dictionary> dictionaries = new TreeSet<>();
+        Set<Dictionary> dictionaries = new TreeSet<>();
         dictionaries.addAll(firstDictionaries);
         dictionaries.addAll(secondDictionaries);
 
